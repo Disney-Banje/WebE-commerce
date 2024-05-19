@@ -1,0 +1,48 @@
+---
+const { heading, subheading, image } = Astro.props;
+---
+
+<article class="artwork">
+    <section class="art-title">
+        <h2>{heading}</h2>
+        <p>{subheading}</p>
+    </section>
+    <img src={image} alt="artwork" class='image-file' />
+</article>
+
+
+<style>
+    .artwork {
+        width: 22.5rem;
+        aspect-ratio: 4 / 5;
+        position: relative;
+        border-radius: 1.2rem;
+        overflow: hidden;
+        transition: all 250ms ease-in-out;
+        cursor: pointer;
+    }
+
+    .art-title {
+        color: antiquewhite;
+        height: fit-content;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        text-align: center;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .artwork:hover {
+        transform: translate(0.3rem, -0.3rem);
+        box-shadow: -0.6rem 0.6rem 0.3rem gainsboro;
+    }
+</style>
